@@ -1,0 +1,13 @@
+"script" command did not work in my local environment.
+
+USED COMMANDS:
+
+§ docker container run hello-world
+
+$ docker run -it ubuntu bash
+
+$ mkdir /usr/src/app
+
+$ touch /usr/src/app/index.js
+
+$ exit
