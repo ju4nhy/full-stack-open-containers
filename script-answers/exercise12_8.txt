@@ -1,0 +1,101 @@
+USED COMMANDS:
+
+$ docker exec -it todo-backend_mongo_1
+
+$ mongosh -u root -p example
+
+$ show dbs
+
+$ use the_database
+
+$ show collections 
+
+$ db.todos.find({})
+
+$ db.runCommand({ insert: "todos", documents: [ { text: "Increase the number of tools in my toolbelt", done: "false" } ] })
+
+-------------------------------------------------------------------------------------
+
+
+# ls
+bin   data  docker-entrypoint-initdb.d  home        lib    lib64   media  opt   root  sbin  sys  typescript  var
+boot  dev   etc                         js-yaml.js  lib32  libx32  mnt    proc  run   srv   tmp  usr
+# cat typescript
+Script started on 2023-02-09 07:51:37+00:00 [TERM="xterm" TTY="/dev/pts/2" COLUMNS="114" LINES="24"]
+# mongosh -u root -p example
+Current Mongosh Log ID: 63e4a61538564cebc9f2414d
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=20
+00&appName=mongosh+1.6.2
+Using MongoDB:          6.0.4
+Using Mongosh:          1.6.2
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2023-02-09T07:40:43.872+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it t
+o 'never'
+   2023-02-09T07:40:43.872+00:00: vm.max_map_count is too low
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> show dbs
+admin         100.00 KiB
+config         72.00 KiB
+local          72.00 KiB
+the_database   56.00 KiB
+test> use the_database
+switched to db the_database
+the_database> show_collections
+ReferenceError: show_collections is not defined
+the_database> show collections
+todos
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId("63e3a2879fdfebcd1b4eb103"),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId("63e3a2879fdfebcd1b4eb104"),
+    text: 'Learn about containers',
+    done: false
+  }
+]
+the_database> db.runCommand({ insert: "todos", documents: [ { text: "Increase the number of tools in my toolbelt",
+ done: "false" } ] })
+{ n: 1, ok: 1 }
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId("63e3a2879fdfebcd1b4eb103"),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId("63e3a2879fdfebcd1b4eb104"),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId("63e4a755a066ccc2d6503c43"),
+    text: 'Increase the number of tools in my toolbelt',
+    done: 'false'
+  }
+]
+the_database> exit
+# exit
+
+Script done on 2023-02-09 07:58:14+00:00 [COMMAND_EXIT_CODE="0"]
