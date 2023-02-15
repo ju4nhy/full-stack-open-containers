@@ -1,7 +1,7 @@
-POST http://localhost:3000/todos/
+POST http://localhost:3001/todos/
 Content-Type: application/json
 
 {
-    "text": "Test todo 2", 
+    "text": "Test todo", 
     "done": "true"
 }
