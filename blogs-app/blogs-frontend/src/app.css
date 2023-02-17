@@ -1,0 +1,104 @@
+.bg {
+  background-color: #3e4a5c;
+  padding: 10px;
+  color: #FFF;
+  border: 10px solid #262b33;
+}
+
+ul {
+  padding-inline-start: 0px;
+  list-style: none;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input {
+  padding: 5px;
+}
+
+button {
+  display: block;
+  width: 80px;
+  height: 30px;
+  margin-top: 10px;
+  background-color: #3686ff;
+  color: #FFF;
+}
+
+.error {
+  color: #FFF;
+  background-color: #ff0000;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.success {
+  color: #FFF;
+  background: green;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.blog {
+  background: #011c47;
+  color: #FFF;
+  font-size: 14px;
+  width: 300px;
+  border: 1px solid;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}
+
+.blogform {
+  background-color: #b5d1ff;
+  color: #000;
+  margin-top: 10px;
+  padding: 15px;
+  padding-top: 5px;
+}
+
+.loginform {
+  background-color: #b5d1ff;
+  color: #000;
+  margin-top: 10px;
+  padding: 15px;
+  padding-top: 5px;
+}
+
+.writtenby {
+  font-size: 12px;
+  margin-top: -15px;
+}
+
+.toggle {
+  background-color: #b5d1ff;
+  padding-bottom: 15px;
+}
+
+.cancel-button {
+ margin-left: 15px;
+ margin-top: 0px;
+}
+
+.view-button, .like-button {
+  display: inline !important;
+  font-size: 10px;
+  width: 40px;
+  height: 20px;
+}
+
+.delete-button {
+ background-color: red;
+ font-size: 10px;
+ width: 50px;
+ height: 20px;
+ margin-left: 2px;
+ margin-bottom: 10px;
+}
+
+#title, #author, #url {
+  margin-left: 10px;
+}

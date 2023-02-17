@@ -1,0 +1,17 @@
+FROM node:16
+
+ARG MONGO_URL
+
+WORKDIR /usr/src/app
+
+COPY --chown=node:node . .
+
+RUN npm ci
+
+ENV MONGODB_URI=${MONGODB_URI}
+ENV SECRET=${SECRET}
+ENV PORT=${3003}
+ENV TEST_MONGODB_URI=${TEST_MONGODB_URI}
+ENV DANGEROUSLY_DISABLE_HOST_CHECK=true
+
+CMD ["npm", "run", "dev"]
