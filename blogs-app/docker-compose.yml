@@ -4,30 +4,30 @@ services:
   # mongo hosted: mongodb atlas
 
   blogs-backend:
-    image: blogs-backend-dev
+    image: blogs-backend
     build:
       context: ./blogs-backend/ 
-      dockerfile: dev.Dockerfile
+      dockerfile: Dockerfile
     volumes:
       - ./blogs-backend:/usr/src/app
     ports:
       - 3003:3003
+    env_file:
+      - ./blogs-backend/.env
     environment: 
       - WATCHPACK_POLLING=true
-    container_name: blogs-backend-dev
+    container_name: blogs-backend-prod
 
   blogs-frontend:
-    image: blogs-frontend-dev
+    image: blogs-frontend
     build:
-      context: ./blogs-frontend/ # The context will pick this directory as the "build context"
-      dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
+      context: ./blogs-frontend/ 
+      dockerfile: Dockerfile 
     volumes:
       - ./blogs-frontend:/usr/src/app # The path can be relative, so ./ is enough to say "the same location as the docker-compose.yml"
     ports:
       - 3000:3000
-    environment: 
-      - DANGEROUSLY_DISABLE_HOST_CHECK=true # Getting "Invalid host header" on localhost:8080 without this
-    container_name: blogs-frontend-dev # This will name the container hello-front-dev
+    container_name: blogs-frontend-prod # 
 
   nginx:
     image: nginx:1.20.1
